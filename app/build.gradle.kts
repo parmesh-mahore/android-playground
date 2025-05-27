@@ -12,19 +12,16 @@ android {
         applicationId = "com.procore.playground"
         minSdk = 24
         targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 3
+        versionName = "1.0.2"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            isMinifyEnabled = true
+            proguardFiles("proguard-rules.pro")
         }
     }
     compileOptions {
@@ -38,6 +35,7 @@ android {
         viewBinding = true
         compose = true
     }
+    dynamicFeatures += setOf(":profile")
 }
 
 dependencies {
@@ -59,11 +57,16 @@ dependencies {
 
     // Activity Compose for setContent { }
     implementation(libs.androidx.activity.compose)
+    implementation(project(":mylibrary"))
+    implementation(project(":mylibrary2"))
 
     // Jetpack Compose BOM (Bill of Materials) - Recommended
     val composeBom = platform(libs.androidx.compose.bom) // Assuming you have this in libs.versions.toml
     implementation(composeBom)
     androidTestImplementation(composeBom)
+
+    implementation("com.google.android.play:feature-delivery:2.1.0")
+    implementation("com.google.android.play:feature-delivery-ktx:2.1.0")
 
     // Compose UI elements
     implementation(libs.androidx.compose.ui)

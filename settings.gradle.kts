@@ -21,3 +21,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "Playground"
 include(":app")
+include(":mylibrary")
+include(":mylibrary2")
+include(":profile")

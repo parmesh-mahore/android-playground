@@ -14,7 +14,8 @@ navigationFragmentKtx = "2.8.7"
 navigationUiKtx = "2.9.0"
 activityCompose = "1.10.1"
 composeBom = "2024.04.01"
-lifecycle = "2.9.0" # For lifecycle-viewmodel-compose etc.
+lifecycle = "2.9.0"
+activity = "1.10.1" # For lifecycle-viewmodel-compose etc.
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -36,10 +37,13 @@ androidx-compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graph
 
 androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
 androidx-lifecycle-viewmodel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "lifecycle" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+android-library = { id = "com.android.library", version.ref = "agp" }
+android-dynamic-feature = { id = "com.android.dynamic-feature", version.ref = "agp" }
 
